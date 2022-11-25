@@ -15,11 +15,11 @@ class ApplicationTests {
   @Test
   @Disabled
   public void encryptDecryptTest() {
-    String text = "this is encrypted"; // 암호화 대상 평문
+    String text = "this is encrypted field";
 
     StandardPBEStringEncryptor jasypt = new StandardPBEStringEncryptor();
-    jasypt.setPassword(encryptKey);           // Jasypt를 이용하여 암호화하는 키 (프로퍼티의 jasypt.encryptor.password)
-    jasypt.setAlgorithm("PBEWithMD5AndDES");  // Jasypt를 이용한 암호화 알고리즘
+    jasypt.setPassword(encryptKey);
+    jasypt.setAlgorithm("PBEWithMD5AndDES");
 
     String encryptedText = jasypt.encrypt(text);
     System.out.println("enc : " + encryptedText);
